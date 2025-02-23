@@ -32,4 +32,17 @@ const MusicLibrary: React.FC = () => {
             <select value={sortKey} onChange={(e) => setSortKey(e.target.value as any)}>
                 <option value="title">Title</option>
                 <option value="artist">Artist</option>
-                <option value="album">Album
+                <option value="album">Album</option>
+            </select>
+            <ul>
+                {filteredSongs.map((song) => (
+                    <li key={song.id}>
+                        {song.title} - {song.artist} ({song.album})
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
+export default MusicLibrary;
